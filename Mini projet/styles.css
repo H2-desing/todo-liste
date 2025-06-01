@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(236, 228, 234); 
+}
+.menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+    min-width: 150px;
+}
+
+.menu.visible {
+    display: block;
+}
+/*
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+*/
+.menu-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.menu-item {
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    margin-right: 5px;
+}
+
+#addTaskBtn {
+    padding: 10px 15px;
+    background-color: lightgray;
+    border: 1px solid lightslategrey;
+    color: black;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+#addTaskBtn:hover {
+    background-color: #45a049;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.task-text {
+    flex: 1;
+    margin: 0 10px;
+    word-break: break-word;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.checkbox:hover{
+    border-color: #11d71b;
+    color: #11d71b;
+}
+
+.delete-btn {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #8a9fb18e; 
+    color: black;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #0c85e9;
+}
+
+.filter-btn.active {
+    background-color: #86a1b8;
+}
+.filter-btn:active{
+    background-color: #45a049;
+}
+
+#taskCounters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 0.9em;
+    border: none;
+}
+
+#taskCounters span {
+    padding: 0 10px;
+}
+
+.edit-input {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+
+/* Mode mobile spécifique */
+.mobile-view {
+    flex-direction: column; 
+    align-items: stretch;
+    text-align: center;
+}
+
+.mobile-view span {
+    display: block;
+    margin: 3px 0;
+    padding: 5px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 3px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #taskCounters {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .task-actions {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+    
+    .edit-input {
+        width: 100%;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    #taskInput {
+        width: 70%;
+    }
+    
+    .task-text {
+        max-width: 180px;
+        word-break: break-word;
+    }
+}

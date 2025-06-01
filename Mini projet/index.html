@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de tâches</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ma TO-DO list</h1>
+
+    <div class="menu-container">
+        <button class="menu-toggle">☰</button>
+        <div class="menu" id="menu">
+            <div class="menu-item" class="filter-buttons">
+                <button  class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="active">En cours</button>
+                <button class="filter-btn" data-filter="completed">Terminées</button>
+            </div>
+
+            <div class="menu-item" id="taskCounters">
+                <span id="totalTasks">Total: 0  </span>
+                <span id="activeTasks">En cours: 0 </span>
+                <span id="completedTasks">Terminées: 0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche...">
+        <button id="addTaskBtn">Ajouter</button>
+    </div>
+    
+    <ul class="task-list" id="taskList"></ul>
+    
+   
+    
+    <script src="script.js"></script>
+</body>
+</html>
